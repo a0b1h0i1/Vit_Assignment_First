@@ -7,7 +7,8 @@
     </head>
     <body>
         <div id="wrapper">
-            <div id="banner">             
+            <div id="banner"> 
+                <h1>My Google Docs</h1>
             </div>
             
             <nav id="navigation">

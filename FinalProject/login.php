@@ -38,6 +38,8 @@ if(isset($_POST['username'])){
 <body>
  <div class="container"> 
  <img src="Images/login.png"/>
+ <h3 style="color:white">Registered users Please Enter Username and Password</h3>
+ 
  <form method = "POST" action="login.php">
  <div class="form-input">
  <input type="text" name="username" placeholder="Enter the User Name"/> 
@@ -48,6 +50,8 @@ if(isset($_POST['username'])){
  <input type="submit" type="submit" value="LOGIN" class="btn-login"/>
  
  </form>
+ <p>   </p>
+ <a href="signup.php" style="color:white">If You are new User Then Click Here</a>
  </div>
 </body>
 </html>

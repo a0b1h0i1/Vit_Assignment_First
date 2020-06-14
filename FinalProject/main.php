@@ -5,7 +5,7 @@
 <?php
 $title = "Home";
 $content = '
-<h3 text-align: center>Economic Impact of the COVID-19 pandemic in India</h3>
+<h2 text-align: center>Economic Impact of the COVID-19 pandemic in India</h2>
 <p>
   The economic impact of the 2020 coronavirus 
   pandemic in India has been largely disruptive. 
@@ -30,7 +30,8 @@ $content = '
     </head>
     <body>
         <div id="wrapper">
-            <div id="banner">             
+            <div id="banner">
+                <h1>My Google Docs</h1>
             </div>
             
             <nav id="navigation">
@@ -49,7 +50,7 @@ $content = '
             <div id="sidebar">
                     <nav id="navigation">
                 <ul id="nav">
-                    <li><a href="sessions.php">Click Here</a></li>
+                    <li><a href="sessions.php">CLICK HERE</a></li>
                     <h3>User Sessions<h3>
                 </ul>
             </nav>

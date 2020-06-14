@@ -6,10 +6,36 @@ body
 
 body p
 {
-    font-size: 0.8em;
+    font-size: 20px;
     line-height: 1.28;
 }
 
+p
+{
+    font-size: 120px;
+    color: blue;
+    font-style: italic;
+    font-family: "Courier New", Courier, monospace;
+    text-align: justify;
+    
+    
+}
+h1{
+    color:white;
+    font-family: "Times New Roman", Times, serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+h2 {
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+  text-transform: uppercase;
+}
+h3 {
+  color: maroon;
+  
+  text-transform: uppercase;
+}
 #wrapper
 {
     width: 1080px;
@@ -72,6 +98,7 @@ footer
 #nav
 {
     list-style: none;
+    
 }
 
 #nav ul
