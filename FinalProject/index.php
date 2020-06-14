@@ -9,4 +9,3 @@ $content = '
 
 include 'Template.php';
 ?>
-
