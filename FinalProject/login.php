@@ -1,57 +1,84 @@
 <?php
     session_start();
 ?>
-<?php 
-if(isset($_POST['username'])){
+<?php
+include 'db.php';
+$error=''; 
+if(isset($_POST['submit'])){
+if(empty($_POST['username']) || empty($_POST['password'])){
+//$error = "Enter username and password";
+echo"<script>alert('Enter username and password')</script>";
+}
+else
+{
+$user=$_POST['username'];
+$pass=$_POST['password'];
+$query = mysqli_query($con, "SELECT * FROM login WHERE username='$user' AND password='$pass'");
+$rows = mysqli_num_rows($query);
+if($rows == 1){ 
+header("Location: main.php"); 
+}
+else
+{
+//$error = "Unauthenticated user check your username and password";
+echo"<script>alert('Unauthenticated user check your username and password')</script>";
     
-    $uname=$_POST['username'];
-    $password=$_POST['password'];
-    include 'db.php';
-    $sql="select * from login where username='".$uname."'AND password='".$password."' limit 1";
-    
-    $result=  mysqli_query($con, $sql);
-    if($result===FALSE)
-        echo "<script>alert('** Query failed executing **')</script>";
-    $number = mysqli_num_rows($result);
-    
-    if($number==1){
-        echo "<script>alert('** Login Scuccesfully **')</script>";
-        header("Location:main.php");
-        exit();
-    }
-    else{
-        echo "<script>alert('Unauthenticated user check your username and password')</script>";
-        //header("Location:login.php");
-        //exit();
-    }
-        
+}
+mysqli_close($con); // Closing connection
+}
 }
 ?>
-
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
- <title> Login Form </title>
- <link rel="stylesheet" a href="css\style1.css">
- 
+<meta charset="UTF-8">
+<title>Login</title>
+<style>
+.login{
+width:360px;
+margin:50px auto;
+font:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+border-radius:10px;
+border:2px solid #ccc;
+padding:10px 40px 25px;
+margin-top:70px; 
+}
+input[type=text], input[type=password]{
+width:99%;
+padding:10px;
+margin-top:8px;
+border:1px solid #ccc;
+padding-left:5px;
+font-size:16px;
+font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif; 
+}
+input[type=submit]{
+width:100%;
+background-color:#009;
+color:#fff;
+border:2px solid #06F;
+padding:10px;
+font-size:20px;
+cursor:pointer;
+border-radius:5px;
+margin-bottom:15px; 
+}
+
+</style>
 </head>
-<body>
- <div class="container"> 
- <img src="Images/login.png"/>
- <h3 style="color:white">Registered users Please Enter Username and Password</h3>
- 
- <form method = "POST" action="login.php">
- <div class="form-input">
- <input type="text" name="username" placeholder="Enter the User Name"/> 
- </div>
- <div class="form-input">
- <input type="password" name="password" placeholder="Enter password"/>
- </div>
- <input type="submit" type="submit" value="LOGIN" class="btn-login"/>
- 
- </form>
- <p>   </p>
- <a href="signup.php" style="color:white">If You are new User Then Click Here</a>
- </div>
+<body background = "Images/bar_background.png">
+<div class="login">
+<h1 align="center">LOGIN</h1>
+<h3 align ="center" style="color:black">Registered users Please Enter Username and Password</h3>
+<form action="" method="post" style="text-align:center;">
+<input type="text" placeholder="Username" id="user" name="username"><br/><br/>
+<input type="password" placeholder="Password" id="pass" name="password"><br/><br/>
+<input type="submit" value="Login" name="submit">
+<!-- Error Message -->
+<span><?php echo $error; ?></span>
+</form>
+<a href="signup.php" style="color:black" >If You are new User Then Click Here</a>
+</div>
+    
 </body>
 </html>

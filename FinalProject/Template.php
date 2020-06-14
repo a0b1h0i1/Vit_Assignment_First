@@ -8,7 +8,7 @@
     <body>
         <div id="wrapper">
             <div id="banner"> 
-                <h1>My Google Docs</h1>
+                <h1>My Docs</h1>
             </div>
             
             <nav id="navigation">
