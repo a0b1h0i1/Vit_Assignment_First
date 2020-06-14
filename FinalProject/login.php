@@ -32,7 +32,7 @@ mysqli_close($con); // Closing connection
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login</title>
+<title>Login Page</title>
 <style>
 .login{
 width:360px;
@@ -77,7 +77,8 @@ margin-bottom:15px;
 <!-- Error Message -->
 <span><?php echo $error; ?></span>
 </form>
-<a href="signup.php" style="color:black" >If You are new User Then Click Here</a>
+<a href="signup.php" style="color:black" >If You are new User Then Click Here</a><br><br>
+<a href="logout.php" style="color:black" >EXIT</a>
 </div>
     
 </body>

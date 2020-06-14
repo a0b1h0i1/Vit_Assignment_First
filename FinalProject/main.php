@@ -37,7 +37,6 @@ $content = '
             <nav id="navigation">
                 <ul id="nav">
                     <li><a href="main.php">HOME</a></li>
-                    <li><a href="login.php">LOGIN</a></li>
                     <li><a href="logout.php">LOGOUT</a></li>
                    
                 </ul>
